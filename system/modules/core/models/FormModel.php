@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @license LGPL-3.0+
+ */
+
+namespace Contao;
+
+
+/**
+ * Reads and writes forms
+ *
+ * @author Leo Feyer <https://github.com/leofeyer>
+ */
+class FormModel extends \Model
+{
+
+	/**
+	 * Table name
+	 * @var string
+	 */
+	protected static $strTable = 'tl_form';
+
+
+	/**
+	 * Get the maximum file size that is allowed for file uploads
+	 *
+	 * @return integer The maximum file size in bytes
+	 */
+	public function getMaxUploadFileSize()
+	{
+		$objResult = \Database::getInstance()->prepare("SELECT MAX(maxlength) AS maxlength FROM tl_form_field WHERE pid=? AND invisible='' AND type='upload' AND maxlength>0")
+											 ->execute($this->id);
+
+		if ($objResult->numRows > 0 && $objResult->maxlength > 0)
+		{
+			return $objResult->maxlength;
+		}
+		else
+		{
+			return \Config::get('maxFileSize');
+		}
+	}
+}
