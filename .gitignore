@@ -35,5 +35,5 @@ nbproject/
 /system/tmp/*
 /templates/*
 !/templates/.gitignore
-!/templates/rad-consulting
+!/templates/radconsulting
 /vendor/
