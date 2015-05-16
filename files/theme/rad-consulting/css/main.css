@@ -1,0 +1,95 @@
+.invisible {
+  display: none;
+}
+body {
+  font-family: 'Lato';
+  color: #343434;
+  line-height: 1.6;
+  font-size: 15px;
+}
+.stager-box {
+  color: #fff;
+  padding: 20px 70px 30px 70px;
+}
+.intro {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+.bg-blue-dark {
+  background-color: #0e5066;
+}
+.bg-blue-light {
+  background-color: #127899;
+}
+.bg-blue-darkest {
+  background-color: #0b3c4c;
+}
+.container-fluid,
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+h1,
+h2 {
+  text-transform: uppercase;
+}
+h2 {
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.mod_article {
+  padding: 40px 0;
+}
+.stager h1 {
+  font-size: 46px;
+}
+.stager h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+#header {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  padding: 0px 10%;
+}
+#header #logo {
+  float: left;
+  margin-top: -10px;
+  margin-left: 30px;
+}
+#header nav.desktop {
+  float: right;
+  margin-right: 30px;
+}
+#header nav a {
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 10px;
+}
+#header nav a:hover,
+#header nav span {
+  color: #1a8bb2;
+  text-decoration: none;
+}
+#header nav li {
+  display: inline;
+}
+.spotlight {
+  background-color: #343434;
+  color: #fff;
+}
+.spotlight .row {
+  height: 400px;
+}
+.spotlight .row .stager {
+  margin-top: 140px;
+}
+body.home .spotlight-home .row {
+  height: 720px;
+}
+body.home .spotlight-home .row .stager {
+  margin-top: 300px;
+}

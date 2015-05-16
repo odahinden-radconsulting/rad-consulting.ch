@@ -17,6 +17,7 @@ nbproject/
 /contao/update.phar.php
 /files/*
 !/files/.gitignore
+!/files/theme
 /assets/css/*
 /assets/images/*
 /assets/js/*
@@ -34,4 +35,5 @@ nbproject/
 /system/tmp/*
 /templates/*
 !/templates/.gitignore
+!/templates/rad-consulting
 /vendor/

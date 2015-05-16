@@ -170,6 +170,12 @@ class GdImage
 			$extension = 'png';
 		}
 
+        $dirpath = dirname($path);
+        if (!is_dir($dirpath))
+        {
+            mkdir($dirpath, 0775, true);
+        }
+
 		// Create the new image
 		switch ($extension)
 		{
