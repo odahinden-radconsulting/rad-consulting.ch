@@ -1,37 +1,4 @@
-<!DOCTYPE html>
-<html lang="<?php echo $this->language; ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
-<head>
-
-  <?php $this->block('head'); ?>
-    <meta charset="<?php echo $this->charset; ?>">
-    <title><?php echo $this->title; ?></title>
-    <base href="<?php echo $this->base; ?>">
-
-    <?php $this->block('meta'); ?>
-      <meta name="robots" content="<?php echo $this->robots; ?>">
-      <meta name="description" content="<?php echo $this->description; ?>">
-      <meta name="keywords" content="<?php echo $this->keywords; ?>">
-      <meta name="generator" content="Contao Open Source CMS">
-    <?php $this->endblock(); ?>
-
-    <?php echo $this->viewport; ?>
-    <?php echo $this->framework; ?>
-    <?php echo $this->mooScripts; ?>
-    <?php echo $this->head; ?>
-    <?php echo $this->stylesheets; ?>
-
-    <?php $this->block('html5shiv'); ?>
-      <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo $GLOBALS['TL_ASSETS']['HTML5SHIV']; ?>/html5shiv-printshiv.js"></script><![endif]-->
-    <?php $this->endblock(); ?>
-  <?php $this->endblock(); ?>
-
-</head>
-<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?php echo $this->onload; ?>"<?php endif; ?>>
-
-  <?php $this->block('body'); ?>
-    <?php $this->sections('top'); ?>
-
-    <div id="wrapper" class="container-fluid">
+    <div id="wrapper" class="container-fluid" data-title="<?php echo $this->title; ?>">
 
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
@@ -84,7 +51,7 @@
 
       <?php $this->block('footer'); ?>
         <?php if ($this->footer): ?>
-          <footer id="footer">
+          <footer id="footer" class="bg-dark">
             <div class="inside">
               <?php echo $this->footer; ?>
             </div>
@@ -93,11 +60,3 @@
       <?php $this->endblock(); ?>
 
     </div>
-
-    <?php $this->sections('bottom'); ?>
-  <?php $this->endblock(); ?>
-
-  <?php echo $this->mootools; ?>
-
-</body>
-</html>

@@ -1,3 +1,22 @@
+.icon {
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  padding-top: 12px;
+  padding-lefT: 4px;
+  display: inline-block;
+  font-size: 16px;
+}
+.icon-big {
+  width: 100px;
+  height: 100px;
+  font-size: 26px;
+  padding: 30px 0 0 8px;
+}
+footer .icon {
+  color: #127899;
+}
 .invisible {
   display: none;
 }
@@ -7,23 +26,33 @@ body {
   line-height: 1.6;
   font-size: 15px;
 }
-.stager-box {
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.stager-box .inside {
   color: #fff;
-  padding: 20px 70px 30px 70px;
+  padding: 20px 50px 30px 50px;
 }
 .intro {
   margin-bottom: 30px;
   text-align: center;
   font-size: 18px;
 }
-.bg-blue-dark {
+.bg-blue-dark-inner .inside,
+.bg-blue-dark-inner {
   background-color: #0e5066;
 }
+.bg-blue-light-inner .inside,
 .bg-blue-light {
   background-color: #127899;
 }
+.bg-blue-darkest-inner .inside,
 .bg-blue-darkest {
   background-color: #0b3c4c;
+}
+.bg-dark {
+  background-color: #343434;
 }
 .container-fluid,
 .container {
@@ -64,14 +93,16 @@ h2 {
   float: right;
   margin-right: 30px;
 }
-#header nav a {
-  font-size: 16px;
+#header nav a,
+#header nav span {
+  font-size: 20px;
   color: #fff;
   padding: 10px 10px;
+  text-decoration: none;
 }
 #header nav a:hover,
 #header nav span {
-  color: #1a8bb2;
+  color: #127899;
   text-decoration: none;
 }
 #header nav li {
@@ -80,6 +111,10 @@ h2 {
 .spotlight {
   background-color: #343434;
   color: #fff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .spotlight .row {
   height: 400px;
@@ -87,9 +122,52 @@ h2 {
 .spotlight .row .stager {
   margin-top: 140px;
 }
-body.home .spotlight-home .row {
+.spotlight-home {
+  background: url(../../../resources/images/spotlight/spotlight-home.jpg) no-repeat center center fixed;
+}
+.spotlight-home .row {
   height: 720px;
 }
-body.home .spotlight-home .row .stager {
+.spotlight-home .row .stager {
   margin-top: 300px;
+}
+.spotlight-services {
+  background: url(../../../resources/images/spotlight/spotlight-services.jpg) no-repeat center center fixed;
+}
+.spotlight-services .row {
+  height: 720px;
+}
+.spotlight-services .row .stager {
+  margin-top: 300px;
+}
+.spotlight-contact {
+  background: url(../../../resources/images/spotlight/spotlight-contact.jpg) no-repeat center center fixed;
+}
+.spotlight-contact .row {
+  height: 720px;
+}
+.spotlight-contact .row .stager {
+  margin-top: 300px;
+}
+footer .inside {
+  padding: 60px 0;
+  color: #bdbdbd;
+  font-size: 13px;
+}
+footer .inside a {
+  color: #bdbdbd;
+}
+footer .inside h5 {
+  color: #127899;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+footer .inside .line {
+  border-bottom: 1px dotted #bdbdbd;
+  margin: 20px 0;
+}
+.font-white {
+  color: #ffffff !important;
 }

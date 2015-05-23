@@ -98,8 +98,15 @@ class TemplateLoader
 	public static function getPath($template, $format, $custom='templates')
 	{
 		$file = $template .  '.' . $format;
+        $ajaxFile = $template. '-ajax.' . $format;
 
-		// Check the theme folder first
+        // load ajax template on xhr request
+        if (strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' && file_exists(TL_ROOT . '/' . $custom . '/' . $ajaxFile))
+        {
+            return TL_ROOT . '/' . $custom . '/' . $ajaxFile;
+        }
+
+            // Check the theme folder first
 		if (file_exists(TL_ROOT . '/' . $custom . '/' . $file))
 		{
 			return TL_ROOT . '/' . $custom . '/' . $file;

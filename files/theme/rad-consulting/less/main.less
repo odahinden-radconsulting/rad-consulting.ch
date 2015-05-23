@@ -5,6 +5,42 @@
 @rd-blue-lightest: #1A8BB2;
 
 @rd-black-dark: #343434;
+@rd-black-light: #bdbdbd;
+
+@rd-white: #fff;
+
+
+
+.background-size(@type) {
+  -webkit-background-size: @type;
+  -moz-background-size: @type;
+  -o-background-size: @type;
+  background-size: @type;
+}
+
+.icon {
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  padding-top: 12px;
+  padding-lefT: 4px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.icon-big {
+  width: 100px;
+  height: 100px;
+  font-size: 26px;
+  padding: 30px 0 0 8px;
+}
+
+footer .icon {
+  color: @rd-blue-light;
+}
+
+
 
 .invisible {
   display: none;
@@ -18,9 +54,14 @@ body {
 
 }
 
-.stager-box {
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.stager-box .inside {
   color: #fff;
-  padding: 20px 70px 30px 70px;
+  padding: 20px 50px 30px 50px;
 }
 
 .intro {
@@ -29,16 +70,21 @@ body {
   font-size: 18px;
 }
 
-.bg-blue-dark {
+.bg-blue-dark-inner .inside, .bg-blue-dark-inner {
   background-color: @rd-blue-dark;
 }
 
-.bg-blue-light {
+
+.bg-blue-light-inner .inside, .bg-blue-light {
   background-color: @rd-blue-light;
 }
 
-.bg-blue-darkest {
+.bg-blue-darkest-inner .inside, .bg-blue-darkest {
   background-color: @rd-blue-darkest;
+}
+
+.bg-dark {
+  background-color: @rd-black-dark;
 }
 
 .container-fluid, .container {
@@ -85,14 +131,15 @@ h2 {
     margin-right: 30px;
   }
 
-  nav a {
-    font-size: 16px;
+  nav a, nav span {
+    font-size: 20px;
     color: #fff;
     padding: 10px 10px;
+    text-decoration: none;
   }
 
   nav a:hover, nav span {
-    color: @rd-blue-lightest;
+    color: @rd-blue-light;
     text-decoration: none;
   }
 
@@ -104,6 +151,7 @@ h2 {
 .spotlight {
   background-color: @rd-black-dark;
   color: #fff;
+  .background-size(cover);
   .row {
     height: 400px;
     .stager {
@@ -112,13 +160,58 @@ h2 {
   }
 }
 
-body.home {
-  .spotlight-home {
-    .row {
-      height: 720px;
-      .stager {
-        margin-top: 300px;
-      }
+.spotlight-home {
+  background: url(../../../resources/images/spotlight/spotlight-home.jpg) no-repeat center center fixed;
+  .row {
+    height: 720px;
+    .stager {
+      margin-top: 300px;
     }
   }
+}
+
+.spotlight-services {
+  background: url(../../../resources/images/spotlight/spotlight-services.jpg) no-repeat center center fixed;
+  .row {
+    height: 720px;
+    .stager {
+      margin-top: 300px;
+    }
+  }
+}
+
+.spotlight-contact {
+  background: url(../../../resources/images/spotlight/spotlight-contact.jpg) no-repeat center center fixed;
+  .row {
+    height: 720px;
+    .stager {
+      margin-top: 300px;
+    }
+  }
+}
+
+footer .inside {
+  padding: 60px 0;
+  color: @rd-black-light;
+  font-size: 13px;
+  a {
+    color: @rd-black-light;
+  }
+
+  h5 {
+    color: @rd-blue-light;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .line {
+    border-bottom: 1px dotted @rd-black-light;
+    margin: 20px 0;
+  }
+}
+
+.font-white {
+  color: @rd-white !important;
 }
