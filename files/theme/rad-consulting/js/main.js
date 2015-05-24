@@ -14,12 +14,15 @@
         initialize: function() {
             var self = this;
 
+            $.Mobile.addHamburgerListener();
+            self.checkForHash();
+
             if (!history.pushState) {
-                console.log('pushstate not supported');
+                //console.log('pushstate not supported');
                 return false;
             }
 
-            jQuery('a').not('[target="_blank"]').on({
+            jQuery('a').not('[target="_blank"], ' + $.Mobile.hamburger).on({
                 click: function(e) {
                     e.preventDefault();
                     self.load($(this).attr('href'));
@@ -56,13 +59,24 @@
                 window.history.pushState({path: url}, title, url);
                 self.setPageTitle(title);
                 self.getContainer().html(c.html());
-
+                self.checkForHash();
                 $.PushState.initialize();
             });
 
             request.fail(function(d) {
-                console.log(d);
+                //console.log(d);
             })
+        },
+        checkForHash: function() {
+            var scrollTo = 0;
+            var url = location.href;
+
+            if (-1 !== url.indexOf('#')) {
+                var target = '#' + (url.split('#')).pop();
+                scrollTo = 'undefined' !== jQuery(target) ? jQuery(target).offset().top : 0;
+            }
+            console.log("i need to scroll to " + scrollTo);
+            window.scrollTo(0,scrollTo);
         },
         setPageTitle: function(title) {
             if ($.type(title) !== 'string') {
@@ -79,6 +93,60 @@
             return this.container;
         }
     };
+
+    $.Mobile = {
+        hamburger: '#nav-toggle',
+        heightReference: '.spotlight',
+        addHamburgerListener: function() {
+            var $container = jQuery(this.hamburger);
+            var $self = this;
+            $container.on({
+                click: function(e){
+                    e.preventDefault();
+                    $(this).toggleClass('active');
+                    $('nav.mobile').toggleClass('active');
+                }
+            });
+
+            var spotlightBottom = $($self.heightReference).position().top + $($self.heightReference).height();
+            $.Window.scrollEvents.push(
+                function() {
+                    var tolerance = $container.offset().top;
+                    var $w = $.Window;
+                    if ($w.scrollX > spotlightBottom) {
+                        $container.addClass('black');
+                        return true;
+                    }
+
+                    $container.removeClass('black');
+                }
+            );
+
+
+        }
+    }
+
+    $.Window = {
+        scrollX: 0,
+        scrollY: 0,
+        scrollEvents: [],
+        initialize: function() {
+            var $self = this;
+            $(window).on({
+                scroll: function(e){
+                    $self.scrollX = $(this).scrollTop();
+                    $self.scrollY = $(this).scrollLeft();
+
+                    for (var i = 0; i < $self.scrollEvents.length; i++) {
+                        if ('function' === $self.scrollEvents[i]()) {
+                            $self.scrollEvents[i]();
+                        }
+                    }
+                    e.stopPropagation();
+                }
+            });
+        }
+    }
 })(jQuery);
 
 jQuery(window).on({
@@ -88,7 +156,6 @@ jQuery(window).on({
             return true;
         }
 
-        console.log($.PushState.history);
 
         var l = $.PushState.history.pop();
         $.PushState.load(l.url, true);
@@ -98,5 +165,6 @@ jQuery(window).on({
 
 jQuery(document).ready(function($) {
     $.PushState.generate();
+    $.Window.initialize();
 });
 
