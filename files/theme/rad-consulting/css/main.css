@@ -303,12 +303,14 @@ footer .inside .logo-footer {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   opacity: 1;
+}
+.mobile.active ul li:nth-child(1) {
   margin-top: -90px;
 }
-.mobile.active ul li:nth-last-child(1) {
+.mobile.active ul li:nth-child(2) {
   margin-top: 0px;
 }
-.mobile.active ul li:nth-last-child(2) {
+.mobile.active ul li:nth-child(3) {
   margin-top: 90px;
 }
 .nav-toggle-container {

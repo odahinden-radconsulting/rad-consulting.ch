@@ -73,7 +73,7 @@
 
             if (-1 !== url.indexOf('#')) {
                 var target = '#' + (url.split('#')).pop();
-                scrollTo = 'undefined' !== jQuery(target) ? jQuery(target).offset().top : 0;
+                scrollTo = 0 !== jQuery(target).length ? jQuery(target).offset().top : 0;
             }
             console.log("i need to scroll to " + scrollTo);
             window.scrollTo(0,scrollTo);
