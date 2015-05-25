@@ -319,7 +319,7 @@ footer .inside {
   background-color: @rd-white;
   color: @rd-blue-lightest;
 }
-.mobile {
+.nav-mobile {
   position: fixed;
   display: block;
   width: 100%;
@@ -327,7 +327,7 @@ footer .inside {
   left: 0px;
   top: 0px;
   background-color: rgba(0,0,0,0.9);
-  z-index: -1;
+  z-index: -99;
   visibility: hidden;
   opacity: 0;
   .transition(all 300ms ease-in-out);
@@ -356,7 +356,7 @@ footer .inside {
   }
 }
 
-.mobile.active {
+.nav-mobile.active {
   z-index: 1;
   visibility: visible;
   opacity: 1;

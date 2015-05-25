@@ -103,7 +103,7 @@
                 click: function(e){
                     e.preventDefault();
                     $(this).toggleClass('active');
-                    $('nav.mobile').toggleClass('active');
+                    $('nav.nav-mobile').toggleClass('active');
                 }
             });
 

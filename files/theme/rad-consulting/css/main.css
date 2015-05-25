@@ -245,7 +245,7 @@ footer .inside .logo-footer {
   background-color: #ffffff;
   color: #1a8bb2;
 }
-.mobile {
+.nav-mobile {
   position: fixed;
   display: block;
   width: 100%;
@@ -253,7 +253,7 @@ footer .inside .logo-footer {
   left: 0px;
   top: 0px;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: -1;
+  z-index: -99;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: all 300ms ease-in-out;
@@ -261,7 +261,7 @@ footer .inside .logo-footer {
   -ms-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
 }
-.mobile ul {
+.nav-mobile ul {
   position: absolute;
   top: 300px;
   left: 50%;
@@ -269,7 +269,7 @@ footer .inside .logo-footer {
   margin-left: -160px;
   padding-left: 0px;
 }
-.mobile ul li {
+.nav-mobile ul li {
   display: block !important;
   width: 100%;
   position: absolute;
@@ -288,29 +288,29 @@ footer .inside .logo-footer {
   transition-delay: 300ms;
   text-align: center;
 }
-.mobile a,
-.mobile span {
+.nav-mobile a,
+.nav-mobile span {
   font-size: 32px !important;
 }
-.mobile.active {
+.nav-mobile.active {
   z-index: 1;
   visibility: visible;
   opacity: 1;
 }
-.mobile.active ul li {
+.nav-mobile.active ul li {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
   opacity: 1;
 }
-.mobile.active ul li:nth-child(1) {
+.nav-mobile.active ul li:nth-child(1) {
   margin-top: -90px;
 }
-.mobile.active ul li:nth-child(2) {
+.nav-mobile.active ul li:nth-child(2) {
   margin-top: 0px;
 }
-.mobile.active ul li:nth-child(3) {
+.nav-mobile.active ul li:nth-child(3) {
   margin-top: 90px;
 }
 .nav-toggle-container {
