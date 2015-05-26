@@ -16,7 +16,7 @@
 @size-md: 992px;
 @size-lg: 1200px;
 
-
+@assetsurl: "//www.rad-consulting.dev/files/theme/rad-consulting";
 
 a, a:hover {
   text-decoration: none;
@@ -48,6 +48,13 @@ a, a:hover {
   -moz-transition: @transition;
   -ms-transition: @transition;
   -o-transition: @transition;
+}
+
+.animation (@animation) {
+  -webkit-animation: @animation;
+  -moz-animation: @animation;
+  -ms-animation: @animation;
+  -o-animation: @animation;
 }
 
 .icon {
@@ -86,7 +93,7 @@ a, a:hover {
 }
 
 footer .icon {
-  a {
+  a, em {
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -237,7 +244,7 @@ h2 {
 }
 
 .spotlight-home {
-  background: url(../images/spotlight-home.jpg) no-repeat center -100px fixed;
+  background: url("@{assetsurl}/images/spotlight-home.jpg") no-repeat center -100px fixed;
   .row {
     height: 560px;
     .stager {
@@ -247,7 +254,7 @@ h2 {
 }
 
 .spotlight-services {
-  background: url(../images/spotlight-services.jpg) no-repeat center -100px fixed;
+  background: url("@{assetsurl}/images/spotlight-services.jpg") no-repeat center -100px fixed;
   .row {
     height: 560px;
     .stager {
@@ -257,7 +264,7 @@ h2 {
 }
 
 .spotlight-contact {
-  background: url(../images/spotlight-contact.jpg) no-repeat center -100px fixed;
+  background: url("@{assetsurl}/images/spotlight-contact.jpg") no-repeat center -100px fixed;
   .row {
     height: 560px;
     .stager {
@@ -270,7 +277,7 @@ footer .inside {
   padding: 60px 0;
   color: @rd-black-light;
   font-size: 13px;
-  background: url(../images/rd-bg-black.jpg) repeat;
+  background: url("@{assetsurl}/images/rd-bg-black.jpg") repeat;
   a {
     color: @rd-black-light;
   }
@@ -442,5 +449,26 @@ footer .inside {
   margin-bottom: 0px;
   .ce_text {
     margin-bottom: 0px;
+  }
+}
+
+body.maintenance {
+  background: url(../images/maintenance.jpg) no-repeat center center fixed;
+  .background-size(cover);
+  opacity: 1;
+
+  .maintenance-stager {
+    margin-top: 200px;
+    margin-bottom: 200px;
+    -webkit-animation-delay: 300ms; /* Safari */
+    animation-delay: 300ms;
+  }
+
+  h1 {
+    font-weight: 900;
+    @media (max-width: @size-sx) {
+      font-size: 24px;
+      white-space: nowrap;
+    }
   }
 }

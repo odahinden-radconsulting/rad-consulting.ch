@@ -18,6 +18,7 @@ nbproject/
 /files/*
 !/files/.gitignore
 !/files/theme
+/files/theme/rad-consulting/css
 /assets/css/*
 /assets/images/*
 /assets/js/*

@@ -35,7 +35,8 @@ a:hover {
   font-size: 26px;
   text-transform: uppercase;
 }
-footer .icon a {
+footer .icon a,
+footer .icon em {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -170,7 +171,7 @@ h2 {
   margin-top: 140px;
 }
 .spotlight-home {
-  background: url(../images/spotlight-home.jpg) no-repeat center -100px fixed;
+  background: url("//www.rad-consulting.dev/files/theme/rad-consulting/images/spotlight-home.jpg") no-repeat center -100px fixed;
 }
 .spotlight-home .row {
   height: 560px;
@@ -179,7 +180,7 @@ h2 {
   margin-top: 220px;
 }
 .spotlight-services {
-  background: url(../images/spotlight-services.jpg) no-repeat center -100px fixed;
+  background: url("//www.rad-consulting.dev/files/theme/rad-consulting/images/spotlight-services.jpg") no-repeat center -100px fixed;
 }
 .spotlight-services .row {
   height: 560px;
@@ -188,7 +189,7 @@ h2 {
   margin-top: 220px;
 }
 .spotlight-contact {
-  background: url(../images/spotlight-contact.jpg) no-repeat center -100px fixed;
+  background: url("//www.rad-consulting.dev/files/theme/rad-consulting/images/spotlight-contact.jpg") no-repeat center -100px fixed;
 }
 .spotlight-contact .row {
   height: 560px;
@@ -200,7 +201,7 @@ footer .inside {
   padding: 60px 0;
   color: #bdbdbd;
   font-size: 13px;
-  background: url(../images/rd-bg-black.jpg) repeat;
+  background: url("//www.rad-consulting.dev/files/theme/rad-consulting/images/rd-bg-black.jpg") repeat;
 }
 footer .inside a {
   color: #bdbdbd;
@@ -383,4 +384,29 @@ footer .inside .logo-footer {
 }
 .fit-bottom .ce_text {
   margin-bottom: 0px;
+}
+body.maintenance {
+  background: url(../images/maintenance.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 1;
+}
+body.maintenance .maintenance-stager {
+  margin-top: 200px;
+  margin-bottom: 200px;
+  -webkit-animation-delay: 300ms;
+  /* Safari */
+
+  animation-delay: 300ms;
+}
+body.maintenance h1 {
+  font-weight: 900;
+}
+@media (max-width: 480px) {
+  body.maintenance h1 {
+    font-size: 24px;
+    white-space: nowrap;
+  }
 }
